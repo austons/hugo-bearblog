@@ -1,6 +1,6 @@
 <style>
   body {
-    font-family: Verdana, sans-serif;
+    font: 14px/1.5 monospace;
     margin: auto;
     padding: 20px;
     max-width: 720px;
@@ -8,7 +8,6 @@
     background-color: #fff;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    line-height: 1.5;
     color: #444;
   }
 
@@ -107,56 +106,16 @@
     display: flex;
   }
 
+  ul.blog-posts > li:nth-of-type(odd) {
+    background-color: #f4f4f4 ;
+}
+
   ul.blog-posts li span {
-    flex: 0 0 130px;
+    flex: 0 0 150px;
   }
 
   ul.blog-posts li a:visited {
     color: #8b6fcb;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #333;
-      color: #ddd;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    strong,
-    b {
-      color: #eee;
-    }
-
-    a {
-      color: #8cc2dd;
-    }
-
-    code {
-      background-color: #777;
-    }
-
-    pre code {
-      color: #ddd;
-    }
-
-    blockquote {
-      color: #ccc;
-    }
-
-    textarea,
-    input {
-      background-color: #252525;
-      color: #ddd;
-    }
-
-    .helptext {
-      color: #aaa;
-    }
   }
 
 </style>

@@ -1,10 +1,10 @@
 {{ define "main" }}
+{{ if .Data.Singular }}
+<h1>Posts tagged with &#39;{{ .Title }}&#39;</h1>
+{{ end }}
 <content>
-  {{ if .Data.Singular }}
-  <h3 style="margin-bottom:0">Filtering for "{{ .Title }}"</h3>
-  <small>
-    <a href="{{ "/blog" | relURL }}">Remove filter</a>
-  </small>
+  {{ if .Content }}
+  {{ .Content }}
   {{ end }}
   <ul class="blog-posts">
     {{ range .Pages }}
@@ -12,11 +12,11 @@
       <span>
         <i>
           <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-            {{ .Date.Format "02 Jan, 2006" }}
+            {{ .Date.Format "January 2, 2006" }}
           </time>
         </i>
       </span>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </li>
     {{ else }}
     <li>
@@ -24,15 +24,5 @@
     </li>
     {{ end }}
   </ul>
-  {{ if .Data.Singular }}
-  {{else}}
-    <small>
-      <div>
-        {{ range .Site.Taxonomies.tags }}
-        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
-        {{ end }}
-      </div>
-    </small>
-    {{ end }}
 </content>
 {{ end }}
